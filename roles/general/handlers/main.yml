@@ -1,6 +1,19 @@
 ---
 
-- name: restart sshd
-  service:
-    name: sshd
-    state: restarted
+- name: reload iptables
+  systemd:
+    name: iptables
+    state: reloaded
+  become: yes
+
+- name: reload nginx
+  systemd:
+    name: nginx
+    state: reloaded
+  become: yes
+
+- name: reload php-fpm
+  systemd:
+    name: php-fpm
+    state: reloaded
+  become: yes

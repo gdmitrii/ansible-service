@@ -2,6 +2,10 @@
 
 services:
     - { name: sshd, state: started, enabled: yes }
+    - { name: iptables, state: started, enabled: yes }
+    - { name: mariadb, state: started, enabled: yes }
+    - { name: nginx, state: started, enabled: yes }
+    - { name: php-fpm, state: started, enabled: yes }
 
 packages:
     - nginx
@@ -14,6 +18,7 @@ packages:
     - yum-utils
     - certbot-nginx
     - iperf
+    - iptraf-ng
     - traceroute
     - mlocate
     - bind-utils
