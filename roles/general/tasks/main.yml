@@ -1,0 +1,26 @@
+---
+
+- name: epel is installed
+  yum:
+    name: epel-release
+    state: present
+  become: yes
+
+- name: configure packages
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  become: yes
+  with_items: "{{ packages }}"
+
+- name: configure services
+  systemd:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    enabled: "{{ item.enabled }}"
+    daemon_reload: yes
+  become: yes
+  ignore_errors: yes
+  with_items: "{{ services }}"
+

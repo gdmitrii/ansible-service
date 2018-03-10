@@ -1,0 +1,21 @@
+---
+
+services:
+    - { name: sshd, state: started, enabled: yes }
+
+packages:
+    - nginx
+    - mariadb-server
+    - mariadb
+    - php
+    - php-mysql
+    - php-fpm
+    - net-tools
+    - yum-utils
+    - certbot-nginx
+    - iperf
+    - traceroute
+    - mlocate
+    - bind-utils
+    - postfix
+    - iptables-services

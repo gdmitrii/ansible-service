@@ -1,0 +1,2 @@
+[web]
+web1 ansible_host=ec2-18-197-180-230.eu-central-1.compute.amazonaws.com
