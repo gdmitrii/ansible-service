@@ -37,6 +37,11 @@
     - etc/nginx/nginx.conf
     - etc/cron.d/50-certbot
 
+- name: selinux is disabled
+  selinux:
+    state: disabled
+  become: yes
+
 - name: configure services
   systemd:
     name: "{{ item.name }}"

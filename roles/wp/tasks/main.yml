@@ -1,0 +1,10 @@
+---
+
+- name: base dir is created
+  file:
+      path: "{{ wp_install_dir }}"
+      state: directory
+      owner: "{{ wp_user }}"
+      group: "{{ wp_group }}"
+      recurse: yes
+  become: yes

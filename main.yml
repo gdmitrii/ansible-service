@@ -5,3 +5,8 @@
     - role: general
       tags: [ 'general' ]
 
+- hosts: web
+  roles:
+    - role: wp
+      tags: [ 'wp' ]
+
