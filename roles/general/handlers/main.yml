@@ -15,5 +15,5 @@
 - name: reload php-fpm
   systemd:
     name: php-fpm
-    state: reloaded
+    state: restarted
   become: yes

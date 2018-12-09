@@ -1,10 +1,13 @@
 ---
 
-- name: epel is installed
+- name: yum repos are installed
   yum:
-    name: epel-release
+    name: "{{ item }}"
     state: present
   become: yes
+  with_items:
+      - epel-release
+      - https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 - name: configure packages
   yum:

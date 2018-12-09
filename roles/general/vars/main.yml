@@ -11,9 +11,10 @@ packages:
     - nginx
     - mariadb-server
     - mariadb
-    - php
-    - php-mysql
-    - php-fpm
+    - php71w
+    - php71w-mysql
+    - php71w-fpm
+    - php71w-xml
     - net-tools
     - yum-utils
     - certbot-nginx
